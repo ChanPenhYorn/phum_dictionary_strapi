@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_dictionary_comps_definition_comps",
+  "info": {
+    "displayName": "definitionComp",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "partOfSpeech": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "example": {
+      "type": "richtext"
+    },
+    "language": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::language.language"
+    },
+    "synonyms": {
+      "type": "richtext"
+    },
+    "antonyms": {
+      "type": "richtext"
+    }
+  }
+}

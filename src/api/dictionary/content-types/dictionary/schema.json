@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dictionaries",
+  "info": {
+    "singularName": "dictionary",
+    "pluralName": "dictionaries",
+    "displayName": "Dictionary",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "alphabet": {
+      "type": "string",
+      "unique": false,
+      "required": true
+    },
+    "mainLanguage": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::language.language"
+    },
+    "targetLanguage": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::language.language"
+    },
+    "definitions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::definition.definition",
+      "mappedBy": "dictionary"
+    },
+    "dictionaryComp": {
+      "displayName": "definitionComp",
+      "type": "component",
+      "repeatable": true,
+      "component": "dictionary-comps.definition-comp"
+    },
+    "language": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::language.language"
+    }
+  }
+}

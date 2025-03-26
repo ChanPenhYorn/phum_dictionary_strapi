@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "definitions",
+  "info": {
+    "singularName": "definition",
+    "pluralName": "definitions",
+    "displayName": "Definition",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "partOfSpeech": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "example": {
+      "type": "richtext"
+    },
+    "language": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::language.language",
+      "inversedBy": "definitions"
+    },
+    "dictionary": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::dictionary.dictionary",
+      "inversedBy": "definitions"
+    },
+    "synonyms": {
+      "type": "richtext"
+    },
+    "antonyms": {
+      "type": "richtext"
+    }
+  }
+}
